@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rapa Iti — A Living Island</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="game">
+  <header class="topbar">
+    <div class="brand"><div class="brand-mark">R</div><div><div class="brand-title">Rapa Iti</div><div class="brand-sub">A LIVING ISLAND</div></div></div>
+    <div class="season"><span class="sun-icon">◒</span><div><strong id="dateLabel">Day 1 · Early wet season</strong><small id="weatherLabel">Light rain · 18°C</small></div></div>
+    <div class="top-resources"><div class="resource"><span>◉</span><div><b id="foodTop">124</b><small>food</small></div></div><div class="resource"><span>◈</span><div><b id="waterTop">86</b><small>water</small></div></div><div class="resource"><span>♧</span><div><b id="peopleTop">12</b><small>people</small></div></div></div>
+    <div class="top-actions"><button class="icon-btn" id="saveBtn" title="Save game">▣</button><button class="icon-btn" id="helpBtn" title="How to play">?</button></div>
+  </header>
+  <main class="layout">
+    <section class="world-wrap">
+      <canvas id="world"></canvas>
+      <div class="map-title"><span class="eyebrow">AUSTRAL ISLANDS · 27°35′S</span><h1>Ha'urei Bay</h1><p id="mapCaption">Cloud shadows drift over the terraces.</p></div>
+      <div class="map-controls"><button id="zoomOut">−</button><button id="zoomIn">+</button><button id="centerBtn" title="Center on settlement">⌖</button></div>
+      <div class="map-legend"><i class="legend-dot home"></i> Settlement <i class="legend-dot field"></i> Taro pondfields <i class="legend-dot stream"></i> Freshwater</div>
+      <div class="toast" id="toast"></div>
+      <div class="map-bottom"><div class="leader-chip"><div class="avatar" id="leaderAvatar">M</div><div><small>COMMUNITY LEADER</small><b id="leaderName">Mairi</b></div><span class="mood-dot"></span></div><div class="time-controls"><button id="pauseBtn" aria-label="Pause">Ⅱ</button><button class="speed active" data-speed="1">1×</button><button class="speed" data-speed="2">2×</button><button class="speed" data-speed="4">4×</button></div></div>
+    </section>
+    <aside class="sidebar">
+      <nav class="tabs"><button class="tab active" data-tab="community">Community</button><button class="tab" data-tab="land">Land</button><button class="tab" data-tab="journal">Journal</button></nav>
+      <div class="panel-scroll" id="panel"></div>
+      <div class="action-bar"><button class="primary-action" id="doAction"><span>✦</span><span id="actionLabel">Take a moment</span><kbd>SPACE</kbd></button><div class="quick-actions"><button data-action="fish"><span>⌁</span> Fish</button><button data-action="harvest"><span>▤</span> Harvest</button><button data-action="gather"><span>♧</span> Gather</button></div></div>
+    </aside>
+  </main>
+</div>
+<div class="modal-backdrop hidden" id="modal"><div class="modal"><button class="modal-close" id="closeModal">×</button><div id="modalContent"></div></div></div>
+<script src="game.js"></script>
+</body></html>
